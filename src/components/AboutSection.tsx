@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
@@ -23,22 +23,9 @@ const DIFFERENTIALS = [
 
 export default function AboutSection() {
   const sectionRef = useRef<HTMLElement>(null)
-  const glowRef    = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-
-      // Glow pulse
-      gsap.to(glowRef.current, {
-        opacity: 0.55,
-        scale: 1.08,
-        duration: 3,
-        repeat: -1,
-        yoyo: true,
-        ease: 'power2.inOut',
-      })
-
-      // Entrance
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -51,17 +38,13 @@ export default function AboutSection() {
         .from('.about-heading', { y: 32, opacity: 0, duration: 0.9, ease: 'power3.out' }, '-=0.4')
         .from('.about-item',    { y: 24, opacity: 0, duration: 0.7, ease: 'expo.out', stagger: 0.15 }, '-=0.5')
         .from('.about-card',   { x: 40, opacity: 0, duration: 1,   ease: 'power3.out' }, '-=0.9')
-
     }, sectionRef)
 
     return () => ctx.revert()
   }, [])
 
   return (
-    <section
-      ref={sectionRef}
-      className="w-full bg-[#0F172A]"
-    >
+    <section ref={sectionRef} className="w-full bg-[#060D1F]">
       <div className="mx-auto max-w-[1400px] px-8 py-[120px] md:px-20">
         <div className="flex flex-col gap-16 lg:flex-row lg:items-center lg:gap-24">
 
@@ -71,7 +54,7 @@ export default function AboutSection() {
               Sobre
             </p>
 
-            <h2 className="about-heading mb-12 text-4xl font-bold leading-[1.1] tracking-tight text-white md:text-5xl">
+            <h2 className="about-heading mb-12 text-4xl font-bold leading-[1.1] tracking-tight text-[#F9FAFB] md:text-5xl">
               A maioria posta.{' '}
               <span className="text-[#60A5FA]">Eu construo presença.</span>
             </h2>
@@ -83,7 +66,7 @@ export default function AboutSection() {
                     <CheckIcon />
                   </span>
                   <div>
-                    <p className="mb-1 font-semibold text-white">{title}</p>
+                    <p className="mb-1 font-semibold text-[#F9FAFB]">{title}</p>
                     <p className="text-sm leading-relaxed text-[#64748B]">{description}</p>
                   </div>
                 </li>
@@ -91,115 +74,57 @@ export default function AboutSection() {
             </ul>
           </div>
 
-          {/* Right — CSM identity card */}
+          {/* Right — phrase card */}
           <div className="about-card relative flex flex-1 justify-center">
-            <div className="relative w-full" style={{ maxWidth: 400 }}>
-
-              {/* Outer ambient glow */}
+            <div
+              className="relative flex w-full flex-col items-center justify-center overflow-hidden"
+              style={{
+                maxWidth: 440,
+                aspectRatio: '4 / 5',
+                borderRadius: '28px',
+                background: 'linear-gradient(160deg, #080f1f 0%, #060D1F 60%, #040a14 100%)',
+                border: '1px solid rgba(96,165,250,0.18)',
+                boxShadow: '0 0 80px rgba(29,78,216,0.25), inset 0 0 60px rgba(29,78,216,0.06)',
+              }}
+            >
+              {/* Subtle radial glow behind text */}
               <div
-                ref={glowRef}
                 aria-hidden
-                className="pointer-events-none absolute"
+                className="pointer-events-none absolute inset-0"
                 style={{
-                  inset: '-32px',
-                  borderRadius: '40px',
-                  background: 'radial-gradient(ellipse at 50% 50%, rgba(96,165,250,0.22), rgba(29,78,216,0.12) 50%, transparent 75%)',
-                  filter: 'blur(24px)',
-                  opacity: 0.3,
+                  background: 'radial-gradient(ellipse 70% 50% at 50% 55%, rgba(29,78,216,0.35), transparent 70%)',
                 }}
               />
 
-              {/* Card — gradient border via background-clip */}
-              <div
-                className="relative flex flex-col items-center justify-center overflow-hidden"
-                style={{
-                  aspectRatio: '4 / 5',
-                  borderRadius: '24px',
-                  padding: '2px',
-                  background: 'linear-gradient(135deg, rgba(96,165,250,0.7) 0%, rgba(29,78,216,0.9) 45%, rgba(96,165,250,0.5) 100%)',
-                  boxShadow: '0 0 48px rgba(96,165,250,0.12), 0 0 100px rgba(29,78,216,0.08)',
-                }}
+              {/* Phrase */}
+              <p
+                className="relative z-10 select-none px-10 text-center font-bold leading-[1.15] tracking-tight text-[#F9FAFB]"
+                style={{ fontSize: 'clamp(26px, 4.5vw, 38px)' }}
               >
-                {/* Inner dark surface */}
-                <div
-                  className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden"
+                Cada projeto recebe
+                <br />
+                <span
                   style={{
-                    borderRadius: '22px',
-                    background: 'linear-gradient(160deg, #080f1f 0%, #040a14 100%)',
+                    background: 'linear-gradient(135deg, #bfdbfe 0%, #60A5FA 50%, #1e40af 100%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
                   }}
                 >
-                  {/* Decorative concentric rings */}
-                  {[260, 190, 126].map((size, i) => (
-                    <span
-                      key={size}
-                      aria-hidden
-                      className="pointer-events-none absolute rounded-full"
-                      style={{
-                        width: size,
-                        height: size,
-                        border: `1px solid rgba(96,165,250,${0.06 + i * 0.04})`,
-                      }}
-                    />
-                  ))}
+                  o melhor de mim.
+                </span>
+              </p>
 
-                  {/* Inner radial glow */}
-                  <div
-                    aria-hidden
-                    className="pointer-events-none absolute inset-0"
-                    style={{
-                      background: 'radial-gradient(ellipse 55% 45% at 50% 50%, rgba(29,78,216,0.18), transparent)',
-                    }}
-                  />
-
-                  {/* CSM monogram */}
-                  <p
-                    className="relative z-10 select-none font-bold leading-none"
-                    style={{
-                      fontSize: 'clamp(72px, 15vw, 96px)',
-                      letterSpacing: '-4px',
-                      background: 'linear-gradient(135deg, #bfdbfe 0%, #60A5FA 40%, #3b82f6 100%)',
-                      WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
-                      backgroundClip: 'text',
-                    }}
-                  >
-                    CSM
-                  </p>
-
-                  {/* Thin divider */}
-                  <div
-                    aria-hidden
-                    className="relative z-10 my-4"
-                    style={{
-                      width: 48,
-                      height: 1,
-                      background: 'linear-gradient(90deg, transparent, rgba(96,165,250,0.55), transparent)',
-                    }}
-                  />
-
-                  {/* Label */}
-                  <p
-                    className="relative z-10 select-none text-[10px] font-semibold uppercase tracking-[0.32em]"
-                    style={{ color: 'rgba(96,165,250,0.45)' }}
-                  >
-                    Social Mídia
-                  </p>
-
-                  {/* Corner accents */}
-                  {[
-                    'left-5 top-5 border-l-2 border-t-2 rounded-tl',
-                    'right-5 top-5 border-r-2 border-t-2 rounded-tr',
-                    'left-5 bottom-5 border-l-2 border-b-2 rounded-bl',
-                    'right-5 bottom-5 border-r-2 border-b-2 rounded-br',
-                  ].map((cls) => (
-                    <span
-                      key={cls}
-                      aria-hidden
-                      className={`pointer-events-none absolute h-5 w-5 border-[#60A5FA]/30 ${cls}`}
-                    />
-                  ))}
-                </div>
-              </div>
+              {/* Thin divider below */}
+              <div
+                aria-hidden
+                className="relative z-10 mt-8"
+                style={{
+                  width: 56,
+                  height: 1,
+                  background: 'linear-gradient(90deg, transparent, rgba(96,165,250,0.5), transparent)',
+                }}
+              />
             </div>
           </div>
 

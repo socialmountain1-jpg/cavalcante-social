@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import Image from 'next/image'
 
@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#0A0F1E]">
       {/* Linha separadora */}
-      <div className="h-px bg-white/8" />
+      <div className="h-px bg-[#60A5FA]/12" />
 
       <div className="mx-auto max-w-6xl px-8 py-14 md:px-20">
 
@@ -24,7 +24,7 @@ export default function Footer() {
                 style={{ height: '32px', width: 'auto' }}
                 onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
               />
-              <span className="font-semibold text-white" style={{ display: 'none' }}>
+              <span className="font-semibold text-[#F9FAFB]" style={{ display: 'none' }}>
                 Cavalcante Social Mídia
               </span>
             </div>
@@ -46,7 +46,7 @@ export default function Footer() {
               <a
                 key={href}
                 href={href}
-                className="text-sm text-[#64748B] transition-colors duration-200 hover:text-white"
+                className="text-sm text-[#64748B] transition-colors duration-200 hover:text-[#F9FAFB]"
               >
                 {label}
               </a>
@@ -60,7 +60,7 @@ export default function Footer() {
               href="https://instagram.com/cavalcantesocialmidia"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 text-sm text-[#64748B] transition-colors duration-200 hover:text-white"
+              className="flex items-center gap-3 text-sm text-[#64748B] transition-colors duration-200 hover:text-[#F9FAFB]"
             >
               <InstagramIcon />
               Instagram
@@ -69,7 +69,7 @@ export default function Footer() {
               href="https://tiktok.com/@cavalcantesocialmidia"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 text-sm text-[#64748B] transition-colors duration-200 hover:text-white"
+              className="flex items-center gap-3 text-sm text-[#64748B] transition-colors duration-200 hover:text-[#F9FAFB]"
             >
               <TikTokIcon />
               TikTok
@@ -78,7 +78,7 @@ export default function Footer() {
               href="https://wa.me/5569992142406"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 text-sm text-[#64748B] transition-colors duration-200 hover:text-white"
+              className="flex items-center gap-3 text-sm text-[#64748B] transition-colors duration-200 hover:text-[#F9FAFB]"
             >
               <WhatsAppIcon />
               WhatsApp
@@ -88,16 +88,18 @@ export default function Footer() {
         </div>
 
         {/* Linha divisória interna */}
-        <div className="my-10 h-px bg-white/5" />
+        <div className="my-10 h-px bg-[#60A5FA]/8" />
 
         {/* Rodapé inferior */}
         <div className="flex flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left">
           <p className="text-xs text-[#64748B]">
             © {new Date().getFullYear()} Cavalcante Social Mídia. Todos os direitos reservados.
           </p>
-          <p className="text-xs font-medium text-[#60A5FA]">
-            Feito com estratégia. Entregue com obsessão.
-          </p>
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+            <a href="/politica-de-privacidade" className="text-xs text-[#64748B] transition-colors hover:text-[#60A5FA]">Privacidade</a>
+            <a href="/termos-de-uso" className="text-xs text-[#64748B] transition-colors hover:text-[#60A5FA]">Termos de Uso</a>
+            <a href="/politica-de-reembolso" className="text-xs text-[#64748B] transition-colors hover:text-[#60A5FA]">Reembolso</a>
+          </div>
         </div>
 
       </div>

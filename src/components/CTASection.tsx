@@ -1,28 +1,16 @@
-'use client'
+﻿'use client'
 
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import BeforeAfterSlider from './BeforeAfterSlider'
 
 gsap.registerPlugin(ScrollTrigger)
 
 export default function CTASection() {
   const sectionRef = useRef<HTMLElement>(null)
-  const shapeRef   = useRef<SVGSVGElement>(null)
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-
-      // ── Shape: ambient counter-rotation + breathe ──────────────────────────
-      gsap.to(shapeRef.current, {
-        rotate: -360, duration: 120, repeat: -1, ease: 'none', transformOrigin: '50% 50%',
-      })
-      gsap.to(shapeRef.current, {
-        scale: 1.06, duration: 12, repeat: -1, yoyo: true, ease: 'power3.inOut',
-      })
-
-      // ── Entrance timeline ──────────────────────────────────────────────────
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -36,8 +24,6 @@ export default function CTASection() {
         .from('.cta-line-2', { y: 36, opacity: 0, duration: 1, ease: 'power3.out' }, '-=0.65')
         .from('.cta-sub',    { y: 24, opacity: 0, duration: 1, ease: 'expo.out'   }, '-=0.55')
         .from('.cta-button', { y: 18, opacity: 0, duration: 0.9, ease: 'expo.out' }, '-=0.5')
-        .from('.cta-slider',  { x: 40, opacity: 0, duration: 1.1, ease: 'power3.out' }, '-=1.2')
-
     }, sectionRef)
 
     return () => ctx.revert()
@@ -47,76 +33,48 @@ export default function CTASection() {
     <section
       ref={sectionRef}
       className="relative w-full overflow-hidden"
-      style={{ background: 'linear-gradient(135deg, #0F172A 0%, #0d2e8a 55%, #1D4ED8 100%)' }}
+      style={{ background: 'linear-gradient(160deg, #060D1F 0%, #0d2e8a 60%, #1D4ED8 100%)' }}
     >
       {/* Radial depth glow */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
         style={{
-          background: 'radial-gradient(ellipse 70% 60% at 50% 40%, rgba(96,165,250,0.12), transparent)',
+          background: 'radial-gradient(ellipse 60% 50% at 50% 50%, rgba(96,165,250,0.1), transparent)',
         }}
       />
 
-      {/* Decorative shape */}
-      <svg
-        ref={shapeRef}
-        aria-hidden
-        className="pointer-events-none absolute -bottom-[22vw] -right-[22vw] w-[60vw] max-w-[680px] opacity-[0.06]"
-        viewBox="0 0 500 500"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <polygon points="250,20 449,135 449,365 250,480 51,365 51,135"   stroke="white" strokeWidth="1.5" fill="none" />
-        <polygon points="250,65 410,158 410,342 250,435 90,342 90,158"   stroke="white" strokeWidth="1"   fill="white" fillOpacity="0.03" />
-        <polygon points="250,110 371,180 371,320 250,390 129,320 129,180" stroke="white" strokeWidth="0.8" fill="none" />
-        <circle cx="250" cy="250" r="95"  stroke="white" strokeWidth="0.5" strokeDasharray="3 8"  fill="none" />
-        <circle cx="250" cy="250" r="168" stroke="white" strokeWidth="0.4" strokeDasharray="2 14" fill="none" />
-      </svg>
+      <div className="relative z-10 mx-auto max-w-[900px] px-8 py-[140px] text-center md:px-20">
 
-      {/* ── Content ───────────────────────────────────────────────────────── */}
-      <div className="relative z-10 mx-auto max-w-[1400px] px-8 py-[120px] md:px-20">
-        <div className="flex flex-col items-center gap-16 lg:flex-row lg:items-center lg:gap-20">
+        <p className="cta-eyebrow mb-8 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#F9FAFB]/50">
+          Próximo passo
+        </p>
 
-          {/* Left — text */}
-          <div className="flex flex-col items-center text-center lg:flex-1 lg:items-start lg:text-left">
+        <h2 className="mb-6 text-4xl font-bold leading-[1.08] tracking-tight md:text-5xl lg:text-6xl">
+          <span className="cta-line-1 block text-[#F9FAFB]">
+            Cansado de tentar viralizar sua empresa e não conseguir?
+          </span>
+        </h2>
 
-            <p className="cta-eyebrow mb-8 text-[11px] font-semibold uppercase tracking-[0.28em] text-white/60">
-              Próximo passo
-            </p>
+        <p className="cta-line-2 mb-10 text-xl font-normal leading-snug tracking-wide text-[#64748B] md:text-2xl">
+          Deixa comigo.
+        </p>
 
-            <h2 className="mb-8 text-4xl font-bold leading-[1.08] tracking-tight md:text-5xl lg:text-6xl">
-              <span className="cta-line-1 block text-white">
-                Cansado de tentar viralizar sua empresa e não conseguir?
-              </span>
-              <span className="cta-line-2 block text-[#60A5FA]">
-                Deixa comigo.
-              </span>
-            </h2>
+        <p className="cta-sub mb-12 mx-auto max-w-[480px] text-base leading-relaxed text-[#F9FAFB]/70 md:text-lg">
+          Você deveria estar fazendo mais dinheiro — não quebrando a cabeça com algoritmo, post e estratégia.
+        </p>
 
-            <p className="cta-sub mb-12 max-w-[440px] text-base leading-relaxed text-white/80 md:text-lg">
-              Você deveria estar fazendo mais dinheiro — não quebrando a cabeça com algoritmo, post e estratégia.
-            </p>
+        <a
+          href="https://wa.me/5569992142406"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="cta-button inline-flex items-center gap-4 bg-[#25D366] px-10 py-5 text-base font-bold text-white shadow-[0_8px_40px_rgba(37,211,102,0.35)] transition-all duration-500 hover:scale-[1.05] hover:bg-[#1ebe59] hover:shadow-[0_24px_64px_rgba(37,211,102,0.45)]"
+          style={{ borderRadius: '100px' }}
+        >
+          <WhatsAppIcon />
+          Quero fazer mais dinheiro
+        </a>
 
-            <a
-              href="https://wa.me/5569992142406"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="cta-button inline-flex items-center gap-4 bg-[#25D366] px-10 py-5 text-base font-bold text-white shadow-[0_8px_40px_rgba(37,211,102,0.35)] transition-all duration-500 hover:scale-[1.05] hover:bg-[#1ebe59] hover:shadow-[0_24px_64px_rgba(37,211,102,0.45)]"
-              style={{ borderRadius: '100px' }}
-            >
-              <WhatsAppIcon />
-              Quero fazer mais dinheiro
-            </a>
-
-          </div>
-
-          {/* Right — before/after slider */}
-          <div className="cta-slider w-full lg:flex-1 lg:flex lg:justify-center">
-            <BeforeAfterSlider />
-          </div>
-
-        </div>
       </div>
     </section>
   )

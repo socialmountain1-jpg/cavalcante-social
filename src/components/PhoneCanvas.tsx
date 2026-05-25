@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useEffect, useRef } from 'react'
 import * as THREE from 'three'
@@ -23,7 +23,7 @@ export default function PhoneCanvas() {
     const camera = new THREE.PerspectiveCamera(40, el.clientWidth / el.clientHeight, 0.1, 100)
     camera.position.set(0, 0, 5)
 
-    // ── Lighting — dramatic blue cinematic ────────────────────────────────────
+    // ── Lighting — dramatic bordeaux cinematic ────────────────────────────────
     scene.add(new THREE.AmbientLight('#030a18', 2))
 
     const keyLight = new THREE.PointLight('#60A5FA', 18, 30)
@@ -88,9 +88,9 @@ export default function PhoneCanvas() {
 
     // Background gradient
     const bg = ctx.createLinearGradient(0, 0, 0, 612)
-    bg.addColorStop(0,    '#060f26')
+    bg.addColorStop(0,    '#060D1F')
     bg.addColorStop(0.35, '#1D4ED8')
-    bg.addColorStop(0.7,  '#1e3a8a')
+    bg.addColorStop(0.7,  '#0d2e8a')
     bg.addColorStop(1,    '#020810')
     ctx.fillStyle = bg
     ctx.fillRect(0, 0, 300, 612)
@@ -117,7 +117,7 @@ export default function PhoneCanvas() {
       if (ctx.roundRect) ctx.roundRect(x, y, w, h, 10)
       else ctx.rect(x, y, w, h)
       ctx.fill(); ctx.stroke()
-      ctx.fillStyle = 'rgba(255,255,255,0.5)'
+      ctx.fillStyle = 'rgba(249,250,251,0.5)'
       ctx.font = '10px system-ui'
       ctx.fillText(sub, x + 12, y + 20)
       ctx.fillStyle = 'rgba(96,165,250,1)'
@@ -143,7 +143,7 @@ export default function PhoneCanvas() {
     ctx.fill()
 
     // Home bar
-    ctx.fillStyle = 'rgba(255,255,255,0.22)'
+    ctx.fillStyle = 'rgba(249,250,251,0.22)'
     ctx.beginPath()
     if (ctx.roundRect) ctx.roundRect(95, 596, 110, 5, 3)
     else ctx.rect(95, 596, 110, 5)

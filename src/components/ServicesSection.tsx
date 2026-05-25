@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
@@ -50,20 +50,20 @@ function ServiceCard({ number, title, description }: Service) {
         min-h-[400px] w-full
         md:h-[540px] md:w-[400px] md:flex-shrink-0
         transition-all duration-700
-        hover:shadow-[0_0_0_1px_rgba(96,165,250,0.5),0_0_60px_rgba(96,165,250,0.3),0_24px_80px_rgba(15,23,42,0.6)]
+        hover:shadow-[0_0_0_1px_rgba(96,165,250,0.5),0_0_60px_rgba(96,165,250,0.25),0_24px_80px_rgba(13,8,8,0.7)]
         cursor-default
       "
     >
       {/* Electric glow overlay — radial light from top-left on hover */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 rounded-2xl bg-[radial-gradient(ellipse_80%_60%_at_0%_0%,rgba(96,165,250,0.18),transparent_65%)] opacity-0 transition-opacity duration-700 group-hover:opacity-100"
+        className="pointer-events-none absolute inset-0 rounded-2xl bg-[radial-gradient(ellipse_80%_60%_at_0%_0%,rgba(96,165,250,0.2),transparent_65%)] opacity-0 transition-opacity duration-700 group-hover:opacity-100"
       />
 
       {/* Giant decorative number in background */}
       <span
         aria-hidden
-        className="pointer-events-none absolute -bottom-6 -right-4 select-none font-black leading-none text-white/[0.06] transition-colors duration-700 group-hover:text-white/[0.11]"
+        className="pointer-events-none absolute -bottom-6 -right-4 select-none font-black leading-none text-[#F9FAFB]/[0.05] transition-colors duration-700 group-hover:text-[#F9FAFB]/[0.09]"
         style={{ fontSize: 'clamp(140px, 18vw, 210px)' }}
       >
         {number}
@@ -72,12 +72,12 @@ function ServiceCard({ number, title, description }: Service) {
       {/* ── Top content ────────────────────────────────────────────────────── */}
       <div className="relative flex flex-col gap-7">
         {/* Small number label */}
-        <span className="font-mono text-[11px] font-semibold tracking-[0.3em] text-white/35">
+        <span className="font-mono text-[11px] font-semibold tracking-[0.3em] text-[#F9FAFB]/35">
           {number}
         </span>
 
         {/* Title */}
-        <h3 className="text-[28px] font-black leading-tight tracking-tight text-white md:text-[34px]">
+        <h3 className="text-[28px] font-black leading-tight tracking-tight text-[#F9FAFB] md:text-[34px]">
           {title}
         </h3>
 
@@ -85,18 +85,18 @@ function ServiceCard({ number, title, description }: Service) {
         <div className="h-px w-14 bg-[#60A5FA]/50 transition-all duration-700 group-hover:w-20 group-hover:bg-[#60A5FA]" />
 
         {/* Description */}
-        <p className="text-[15px] leading-[1.75] text-white/60">
+        <p className="text-[15px] leading-[1.75] text-[#F9FAFB]/60">
           {description}
         </p>
       </div>
 
       {/* ── Bottom arrow ───────────────────────────────────────────────────── */}
       <div className="relative mt-10 flex items-center justify-between">
-        <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/35 transition-colors duration-700 group-hover:text-white/60">
+        <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#F9FAFB]/35 transition-colors duration-700 group-hover:text-[#F9FAFB]/60">
           Ver serviço
         </span>
         <div className="flex items-center gap-3">
-          <div className="h-px w-8 bg-white/20 transition-all duration-700 group-hover:w-14 group-hover:bg-[#60A5FA]/60" />
+          <div className="h-px w-8 bg-[#F9FAFB]/20 transition-all duration-700 group-hover:w-14 group-hover:bg-[#60A5FA]/60" />
           <ArrowIcon />
         </div>
       </div>
@@ -222,14 +222,14 @@ export default function ServicesSection() {
   return (
     <section
       ref={sectionRef}
-      className="overflow-hidden bg-[#0F172A]"
+      className="overflow-hidden bg-[#060D1F]"
     >
       {/* ── Mobile title ──────────────────────────────────────────────────── */}
       <div className="services-title px-8 pb-8 pt-20 md:hidden">
         <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#60A5FA]">
           O que fazemos
         </p>
-        <h2 className="text-4xl font-bold leading-tight text-white">
+        <h2 className="text-4xl font-bold leading-tight text-[#F9FAFB]">
           Cada serviço,{' '}
           <span className="text-[#60A5FA]">um resultado.</span>
         </h2>
@@ -247,19 +247,19 @@ export default function ServicesSection() {
           <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#60A5FA]">
             O que fazemos
           </p>
-          <h2 className="text-[44px] font-black leading-[1.03] tracking-tight text-white">
+          <h2 className="text-[44px] font-black leading-[1.03] tracking-tight text-[#F9FAFB]">
             Cada serviço,
             <br />
             <span className="text-[#60A5FA]">um resultado.</span>
           </h2>
-          <div className="h-px w-12 bg-white/10" />
-          <p className="text-sm leading-relaxed text-white/45">
+          <div className="h-px w-12 bg-[#F9FAFB]/10" />
+          <p className="text-sm leading-relaxed text-[#F9FAFB]/45">
             Escolha o caminho certo — ou combine tudo numa estratégia completa.
           </p>
         </div>
 
         {/* Vertical separator */}
-        <div className="hidden md:block md:h-56 md:w-px md:flex-shrink-0 md:bg-white/8" />
+        <div className="hidden md:block md:h-56 md:w-px md:flex-shrink-0 md:bg-[#60A5FA]/12" />
 
         {/* Cards */}
         {SERVICES.map((service) => (

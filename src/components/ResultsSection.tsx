@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
@@ -48,7 +48,7 @@ export default function ResultsSection() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="w-full bg-[#0F172A]">
+    <section ref={sectionRef} className="w-full bg-[#060D1F]">
       <div className="mx-auto max-w-[1400px] px-8 py-[120px] md:px-20">
 
         {/* Header */}
@@ -60,7 +60,7 @@ export default function ResultsSection() {
           <h2
             className="case-headline mb-6 max-w-3xl text-4xl font-bold leading-[1.1] tracking-tight md:text-5xl lg:text-6xl"
             style={{
-              background: 'linear-gradient(90deg, #ffffff 0%, #93C5FD 50%, #ffffff 100%)',
+              background: 'linear-gradient(90deg, #F9FAFB 0%, #93C5FD 50%, #F9FAFB 100%)',
               backgroundSize: '200% auto',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
@@ -72,8 +72,7 @@ export default function ResultsSection() {
           </h2>
 
           <p className="case-sub max-w-xl text-base leading-relaxed text-[#64748B] md:text-lg">
-            Ainda estou construindo minha história —{' '}
-            <span className="font-medium text-white/80">e quero construir a sua junto.</span>
+            Cada cliente é uma história que me orgulho de contar.
           </p>
         </div>
 
@@ -84,7 +83,7 @@ export default function ResultsSection() {
               key={title}
               className="case-card group flex flex-col gap-5 rounded-2xl p-8 transition-all duration-500 hover:border-[#60A5FA]/25 md:p-10"
               style={{
-                background: 'linear-gradient(145deg, #0d1a2e 0%, #0a1220 100%)',
+                background: 'linear-gradient(145deg, #0A0F1E 0%, #060D1F 100%)',
                 border: '1px solid rgba(96,165,250,0.1)',
               }}
             >
@@ -98,7 +97,7 @@ export default function ResultsSection() {
 
               {/* Text */}
               <div>
-                <p className="mb-3 text-lg font-bold text-white">{title}</p>
+                <p className="mb-3 text-lg font-bold text-[#F9FAFB]">{title}</p>
                 <p className="text-sm leading-relaxed text-[#64748B]">{description}</p>
               </div>
 

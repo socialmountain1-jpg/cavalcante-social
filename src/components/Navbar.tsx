@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
@@ -31,7 +31,7 @@ export default function Navbar() {
     <header
       className={`fixed left-0 right-0 top-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'bg-[#0A0F1E]/90 shadow-[0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-md'
+          ? 'bg-[#0A0F1E]/90 shadow-[0_1px_0_rgba(96,165,250,0.12)] backdrop-blur-md'
           : 'bg-transparent'
       }`}
     >
@@ -54,7 +54,7 @@ export default function Navbar() {
             }}
           />
           <span
-            className="font-bold text-white text-lg tracking-tight"
+            className="font-bold text-[#F9FAFB] text-lg tracking-tight"
             style={{ display: 'none' }}
           >
             Cavalcante<span className="text-[#60A5FA]">.</span>Social
@@ -68,7 +68,7 @@ export default function Navbar() {
               key={href}
               href={href}
               onClick={(e) => handleAnchor(e, href)}
-              className="text-sm font-medium text-white/60 transition-colors duration-200 hover:text-white"
+              className="text-sm font-medium text-[#F9FAFB]/60 transition-colors duration-200 hover:text-[#F9FAFB]"
             >
               {label}
             </a>
@@ -80,7 +80,7 @@ export default function Navbar() {
           href="https://wa.me/5569992142406"
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded-full bg-[#1D4ED8] px-6 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#1e40af] hover:shadow-[0_4px_20px_rgba(29,78,216,0.4)]"
+          className="rounded-full bg-[#1D4ED8] px-6 py-2.5 text-sm font-semibold text-[#F9FAFB] transition-all duration-300 hover:bg-[#1e40af] hover:shadow-[0_4px_20px_rgba(29,78,216,0.5)]"
         >
           Falar no WhatsApp
         </a>

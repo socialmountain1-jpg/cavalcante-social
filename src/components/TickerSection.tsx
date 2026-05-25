@@ -1,4 +1,4 @@
-const ROW_ONE = [
+﻿const ROW_ONE = [
   'MAIS CLIENTES →',
   'MAIS PRESENÇA →',
   'MARCA QUE VENDE →',
@@ -64,7 +64,7 @@ export default function TickerSection() {
     <section
       style={{
         width: '100%',
-        background: '#0F172A',
+        background: '#060D1F',
         paddingTop: 56,
         paddingBottom: 56,
         display: 'flex',
@@ -74,7 +74,7 @@ export default function TickerSection() {
       }}
       aria-hidden
     >
-      <TickerRow items={ROW_ONE} direction="ltr" color="#ffffff" />
+      <TickerRow items={ROW_ONE} direction="ltr" color="#F9FAFB" />
       <TickerRow items={ROW_TWO} direction="rtl" color="#60A5FA" />
     </section>
   )
