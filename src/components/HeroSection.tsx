@@ -91,7 +91,7 @@ export default function HeroSection() {
           Cavalcante Social Mídia
         </p>
 
-        <h1 className="mb-8 text-5xl font-bold leading-[1.07] tracking-tight text-[#F9FAFB] md:text-7xl lg:text-8xl">
+        <h1 className="mb-8 text-[2rem] font-bold leading-[1.07] tracking-tight text-[#F9FAFB] sm:text-5xl md:text-7xl lg:text-8xl">
           {WORDS.map((word, i) => (
             <Fragment key={i}>
               <span className="inline-block overflow-hidden pb-[3px] align-bottom">
@@ -106,7 +106,7 @@ export default function HeroSection() {
 
         <p
           ref={subRef}
-          className="mx-auto mb-12 max-w-[560px] text-lg leading-relaxed text-[#F9FAFB]/70 md:text-[19px]"
+          className="mx-auto mb-12 max-w-[560px] text-base leading-relaxed text-[#F9FAFB]/70 md:text-lg md:text-[19px]"
         >
           Social Media, Design, Sites e Mentoria —{' '}
           <span className="font-medium text-[#F9FAFB]">feito com estratégia</span>,{' '}
@@ -121,14 +121,14 @@ export default function HeroSection() {
             href="https://wa.me/5569992142406"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 rounded-full bg-[#1D4ED8] px-8 py-4 text-sm font-semibold text-[#F9FAFB] transition-all duration-700 hover:bg-[#1e40af] hover:shadow-[0_8px_32px_rgba(29,78,216,0.5)]"
+            className="inline-flex w-full items-center justify-center gap-3 rounded-full bg-[#1D4ED8] px-8 py-4 text-sm font-semibold text-[#F9FAFB] transition-all duration-700 hover:bg-[#1e40af] hover:shadow-[0_8px_32px_rgba(29,78,216,0.5)] sm:w-auto"
           >
             <WhatsAppIcon />
             Fala comigo no WhatsApp
           </a>
           <a
             href="#servicos"
-            className="rounded-full border border-[#F9FAFB]/25 px-8 py-4 text-sm font-semibold text-[#F9FAFB] transition-all duration-700 hover:border-[#60A5FA]/70 hover:bg-[#60A5FA]/8 hover:text-[#60A5FA]"
+            className="w-full rounded-full border border-[#F9FAFB]/25 px-8 py-4 text-center text-sm font-semibold text-[#F9FAFB] transition-all duration-700 hover:border-[#60A5FA]/70 hover:bg-[#60A5FA]/8 hover:text-[#60A5FA] sm:w-auto"
           >
             Ver meus serviços
           </a>

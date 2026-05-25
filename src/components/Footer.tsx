@@ -8,7 +8,7 @@ export default function Footer() {
       {/* Linha separadora */}
       <div className="h-px bg-[#60A5FA]/12" />
 
-      <div className="mx-auto max-w-6xl px-8 py-14 md:px-20">
+      <div className="mx-auto max-w-6xl px-6 py-12 md:px-20">
 
         {/* Linha principal */}
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">

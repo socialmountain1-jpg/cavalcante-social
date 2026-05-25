@@ -23,10 +23,12 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`${geist.variable} h-full antialiased`}>
       <body className="min-h-full bg-[#060D1F] font-sans text-[#F9FAFB]">
-        <Navbar />
-        <LenisProvider>{children}</LenisProvider>
-        <Footer />
-        <CookieBanner />
+        <LenisProvider>
+          <Navbar />
+          {children}
+          <Footer />
+          <CookieBanner />
+        </LenisProvider>
       </body>
     </html>
   );

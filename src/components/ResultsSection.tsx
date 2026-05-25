@@ -49,7 +49,7 @@ export default function ResultsSection() {
 
   return (
     <section ref={sectionRef} className="w-full bg-[#060D1F]">
-      <div className="mx-auto max-w-[1400px] px-8 py-[120px] md:px-20">
+      <div className="mx-auto max-w-[1400px] px-6 py-16 md:px-20 md:py-[120px]">
 
         {/* Header */}
         <div className="mb-16 flex flex-col items-center text-center">
@@ -116,7 +116,7 @@ export default function ResultsSection() {
             href="https://wa.me/5569992142406"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-[#25D366] px-10 py-5 text-base font-bold text-white shadow-[0_8px_32px_rgba(37,211,102,0.3)] transition-all duration-500 hover:scale-[1.04] hover:bg-[#1ebe59] hover:shadow-[0_16px_48px_rgba(37,211,102,0.4)]"
+            className="inline-flex w-full items-center justify-center gap-3 bg-[#25D366] px-10 py-5 text-base font-bold text-white shadow-[0_8px_32px_rgba(37,211,102,0.3)] transition-all duration-500 hover:scale-[1.04] hover:bg-[#1ebe59] hover:shadow-[0_16px_48px_rgba(37,211,102,0.4)] sm:w-auto"
             style={{ borderRadius: '100px' }}
           >
             <WhatsAppIcon />

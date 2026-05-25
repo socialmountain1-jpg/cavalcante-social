@@ -225,7 +225,7 @@ export default function ServicesSection() {
       className="overflow-hidden bg-[#060D1F]"
     >
       {/* ── Mobile title ──────────────────────────────────────────────────── */}
-      <div className="services-title px-8 pb-8 pt-20 md:hidden">
+      <div className="services-title px-6 pb-8 pt-14 md:hidden">
         <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#60A5FA]">
           O que fazemos
         </p>
@@ -239,7 +239,7 @@ export default function ServicesSection() {
       <div
         ref={trackRef}
         className="flex will-change-transform
-          flex-col gap-5 px-8 pb-20 pt-4
+          flex-col gap-5 px-6 pb-16 pt-4
           md:h-screen md:w-max md:flex-row md:items-center md:gap-10 md:px-20 md:pb-0 md:pt-0"
       >
         {/* Desktop title panel */}

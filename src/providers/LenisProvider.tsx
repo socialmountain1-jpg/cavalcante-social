@@ -1,15 +1,29 @@
 'use client'
 
-import { useEffect } from 'react'
+import { createContext, useContext, useMemo, useEffect, useRef } from 'react'
 import Lenis from 'lenis'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
+interface LenisControl {
+  stop: () => void
+  start: () => void
+}
+
+const LenisContext = createContext<LenisControl>({ stop: () => {}, start: () => {} })
+
+export function useLenis() {
+  return useContext(LenisContext)
+}
+
 export default function LenisProvider({ children }: { children: React.ReactNode }) {
+  const lenisRef = useRef<Lenis | null>(null)
+
   useEffect(() => {
     const lenis = new Lenis()
+    lenisRef.current = lenis
 
     lenis.on('scroll', ScrollTrigger.update)
 
@@ -23,8 +37,17 @@ export default function LenisProvider({ children }: { children: React.ReactNode 
     return () => {
       lenis.destroy()
       gsap.ticker.remove(raf)
+      lenisRef.current = null
     }
   }, [])
 
-  return <>{children}</>
+  const value = useMemo<LenisControl>(
+    () => ({
+      stop: () => lenisRef.current?.stop(),
+      start: () => lenisRef.current?.start(),
+    }),
+    []
+  )
+
+  return <LenisContext.Provider value={value}>{children}</LenisContext.Provider>
 }

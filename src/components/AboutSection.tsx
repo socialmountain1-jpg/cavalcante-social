@@ -45,7 +45,7 @@ export default function AboutSection() {
 
   return (
     <section ref={sectionRef} className="w-full bg-[#060D1F]">
-      <div className="mx-auto max-w-[1400px] px-8 py-[120px] md:px-20">
+      <div className="mx-auto max-w-[1400px] px-6 py-16 md:px-20 md:py-[120px]">
         <div className="flex flex-col gap-16 lg:flex-row lg:items-center lg:gap-24">
 
           {/* Left — text + differentials */}

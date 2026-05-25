@@ -44,13 +44,13 @@ export default function CTASection() {
         }}
       />
 
-      <div className="relative z-10 mx-auto max-w-[900px] px-8 py-[140px] text-center md:px-20">
+      <div className="relative z-10 mx-auto max-w-[900px] px-6 py-16 text-center md:px-20 md:py-[140px]">
 
         <p className="cta-eyebrow mb-8 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#F9FAFB]/50">
           Próximo passo
         </p>
 
-        <h2 className="mb-6 text-4xl font-bold leading-[1.08] tracking-tight md:text-5xl lg:text-6xl">
+        <h2 className="mb-6 text-[1.65rem] font-bold leading-[1.08] tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
           <span className="cta-line-1 block text-[#F9FAFB]">
             Cansado de tentar viralizar sua empresa e não conseguir?
           </span>
@@ -68,7 +68,7 @@ export default function CTASection() {
           href="https://wa.me/5569992142406"
           target="_blank"
           rel="noopener noreferrer"
-          className="cta-button inline-flex items-center gap-4 bg-[#25D366] px-10 py-5 text-base font-bold text-white shadow-[0_8px_40px_rgba(37,211,102,0.35)] transition-all duration-500 hover:scale-[1.05] hover:bg-[#1ebe59] hover:shadow-[0_24px_64px_rgba(37,211,102,0.45)]"
+          className="cta-button inline-flex w-full items-center justify-center gap-4 bg-[#25D366] px-10 py-5 text-base font-bold text-white shadow-[0_8px_40px_rgba(37,211,102,0.35)] transition-all duration-500 hover:scale-[1.05] hover:bg-[#1ebe59] hover:shadow-[0_24px_64px_rgba(37,211,102,0.45)] sm:w-auto"
           style={{ borderRadius: '100px' }}
         >
           <WhatsAppIcon />

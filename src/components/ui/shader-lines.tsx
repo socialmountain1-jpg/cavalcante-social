@@ -89,7 +89,7 @@ export function ShaderAnimation() {
     const mesh = new THREE.Mesh(geometry, material)
     scene.add(mesh)
     const renderer = new THREE.WebGLRenderer()
-    renderer.setPixelRatio(window.devicePixelRatio)
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
     container.appendChild(renderer.domElement)
     sceneRef.current = { camera, scene, renderer, uniforms, animationId: null }
     const onWindowResize = () => {
